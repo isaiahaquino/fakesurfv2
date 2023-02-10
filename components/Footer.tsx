@@ -3,43 +3,43 @@ import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs"
 
 export default function Footer() {
   return (
-    <div>
-      <div className="flex flex-row justify-center text-white bg-black text-sm px-8 gap-4">
-        <div className="flex-1 text-3xl">
+    <div className="absolute bottom-0 w-full">
+      <div className="flex flex-wrap justify-center text-white bg-black text-sm px-10 md:px-[5rem] pb-6 gap-4">
+        <div className="flex-1 text-3xl min-w-[13rem] py-4">
           <h1>FakeSurf</h1>
         </div>
 
-        <div className="flex-2">
-          <ul className="flex flex-wrap mr-20">
-            <li className="w-40">
+        <div className="flex-2 max-w-[25rem] pr-2 py-4">
+          <ul className="flex flex-wrap">
+            <li className="w-40 py-1">
               <Link href=''>Shop</Link>
             </li>
-            <li className="w-40">
+            <li className="w-40 py-1">
               <Link href=''>About</Link>
             </li>
-            <li className="w-40">
+            <li className="w-40 py-1">
               <Link href=''>Lookbook</Link>
             </li>
-            <li className="w-40">
+            <li className="w-40 py-1">
               <Link href=''>Privacy Policy</Link>
             </li>
-            <li className="w-40">
+            <li className="w-40 py-1">
               <Link href=''>Legal</Link>
             </li>
-            <li className="w-40">
+            <li className="w-40 py-1">
               <Link href=''>Terms & Conditions</Link>
             </li>
           </ul>
         </div>
 
-        <div className="flex-1">
-          <h1>Subscribe to our newsletter</h1>
-          <input className="bg-black border-b-2 border-slate-200" type="email" placeholder="Your Email"/>
+        <div className="flex-1 min-w-[13rem] py-4">
+          <h1 className="">Subscribe to our newsletter</h1>
+          <input className="bg-black border-b-2 border-slate-200 my-2" type="email" placeholder="Your Email"/>
         </div>
 
-        <div className="flex-1">
-          <h1>Social Media</h1>
-          <ul className="flex flex-row gap-2">
+        <div className="flex-[.75] min-w-[8rem] py-4">
+          <h1 className="">Social Media</h1>
+          <ul className="flex flex-row gap-2 py-2">
             <li>
               <Link href=""><BsInstagram /></Link>
             </li>

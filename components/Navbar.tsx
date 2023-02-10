@@ -12,18 +12,18 @@ export default function Navbar() {
 
       <div className="border-slate-200 border-x-2 flex flex-row flex-1 items-center px-3">
         <BiSearch />
-        <h1 className="text-gray-500 px-1 text-sm">Search</h1>
+        <input className="w-full" type="text" placeholder="What are you looking for?"></input>
       </div>
       
       <div className="flex align-middle">
         <ul className="flex flex-row divide-slate-200 divide-x-2 items-center">
           <li className="px-2 py-1">
-            <Link href="">
+            <Link href="/about">
               About
             </Link>
           </li>
           <li className="px-2 py-1">
-            <Link href="">
+            <Link href="/shop">
               Shop
             </Link>
           </li>
