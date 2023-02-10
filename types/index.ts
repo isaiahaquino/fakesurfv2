@@ -40,3 +40,4 @@ export type TApiSingleProductResp = {
 export type TApiErrorResp = {
   message: string;
 };
+

@@ -19,7 +19,10 @@ export default function RootLayout({
         
         <Navbar />
 
-        {children}
+        <main className='relative min-h-screen'>
+          {children}
+        </main>
+
 
         <Footer />
         

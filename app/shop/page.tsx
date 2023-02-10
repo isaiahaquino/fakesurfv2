@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import ProductsGrid from "@/components/ProductsGrid"
 import CategoriesBox from "@/components/CategoriesBox";
+import ShopHeader from "@/components/ShopHeader";
 
 export default function Shop() {
 
@@ -20,20 +21,24 @@ export default function Shop() {
       })
   }, [])
 
-  if (isLoading) return <div></div>
-  if (data == null) return <h1></h1>
+  if (isLoading) return <h1>Loading</h1>
+  if (data == null) return <h1>No data</h1>
 
   return (
-    <div className="flex flex-col items-center max-w-6xl mx-auto">
-      <div className="w-full my-4">
-        <h2 className="my-4">Home / Shop {category !== "Shop" ? ` / ${category}` : ""}</h2>
-        <h1 className="my-4 text-4xl">{category}</h1>
-      </div>
+    <div className="flex flex-col items-center max-w-6xl mx-auto px-5 h-full">
+      <ShopHeader 
+        category={category}
+      />
 
-      <div className="w-full flex-row items-start my-4">
-        <CategoriesBox categories={data.categories} />
+      <div className="w-full flex flex-row my-4 gap-6">
+        <CategoriesBox 
+          categories={data.categories}
+          handleCategory={setCategory} 
+        />
 
-        <ProductsGrid />
+        <ProductsGrid 
+          products={data.categories[1].products}
+        />
       </div>
     </div>
   )
