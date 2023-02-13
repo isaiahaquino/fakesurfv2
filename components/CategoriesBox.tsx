@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function CategoriesBox({categories, handleCategory}) {
+export default function CategoriesBox({categories}) {
 
   if (categories == null) return <div></div>
 
@@ -13,8 +13,7 @@ export default function CategoriesBox({categories, handleCategory}) {
           return <li className="my-1" key={category.id}>
             <Link 
               className="hover:text-slate-500" 
-              href={`/shop/${encodeURIComponent(category.name)}`}
-              onClick={() => handleCategory(category.name)}
+              href={`/shop/${category.id}`}
             >{category.name}</Link>
           </li>
         })}

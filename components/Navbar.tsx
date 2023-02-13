@@ -28,7 +28,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="px-2 py-1">
-            <Link href="">
+            <Link href="/cart">
               Cart (0)
             </Link>
           </li>
