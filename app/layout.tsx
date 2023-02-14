@@ -1,7 +1,7 @@
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-
+import Providers from '@/components/Providers'
 
 export default function RootLayout({
   children,
@@ -16,16 +16,17 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        
-        <Navbar />
+        <Providers>
+          <div className='relative min-h-screen'>
+            <Navbar />
 
-        <main className='relative min-h-screen'>
-          {children}
-        </main>
+            <main>
+              {children}
+            </main>
 
-
-        <Footer />
-        
+            <Footer />
+          </div> 
+        </Providers>
       </body>
     </html>
   )
