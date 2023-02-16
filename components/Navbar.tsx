@@ -1,7 +1,13 @@
+"use client"
+
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi"
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
+
+  const cart = useSelector((state) => state.cart)
+
   return (
     <div className="w-screen flex flex-row border-slate-200 border-b-2">
       <div className="px-5 text-2xl">
@@ -29,7 +35,7 @@ export default function Navbar() {
           </li>
           <li className="px-2 py-1">
             <Link href="/cart">
-              Cart (0)
+              Cart ({cart.length})
             </Link>
           </li>
         </ul> 

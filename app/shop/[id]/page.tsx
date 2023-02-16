@@ -1,5 +1,6 @@
 "use client"
 
+import ShopHeader from '@/components/ShopHeader';
 import { useEffect, useState } from 'react';
 import ProductsGrid from '../../../components/ProductsGrid'
 
@@ -23,7 +24,9 @@ export default function SingleCategory({params}) {
   console.log(data)
 
   return (
-    <div>
+    <div className="flex flex-col items-center max-w-[1200px] mx-auto px-5 h-full mb-10">
+      <ShopHeader title={`${data.category.name}`} />
+
       <ProductsGrid 
         products={data.category.products}
       />

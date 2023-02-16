@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 import ProductsGrid from "@/components/ProductsGrid"
 import CategoriesBox from "@/components/CategoriesBox";
+import ShopHeader from "@/components/ShopHeader";
 
 export default function Shop() {
 
-  const [data, setData] = useState<any>(null)
+  const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
-  const [category, setCategory] = useState("Shop")
 
   useEffect(() => {
     setIsLoading(true)
@@ -24,14 +24,18 @@ export default function Shop() {
   if (data == null) return <h1>No data</h1>
 
   return (
-    <div className="w-full flex flex-row my-4 gap-6">
-      <CategoriesBox 
-        categories={data.categories}
-      />
+    <div className="flex flex-col items-center max-w-6xl mx-auto px-5 h-full">
+      <ShopHeader title={`SHOP`} />
 
-      <ProductsGrid 
-        products={data.categories[1].products}
-      />
+      <div className="w-full flex flex-row my-4 gap-6">
+        <CategoriesBox 
+          categories={data.categories}
+        />
+
+        <ProductsGrid 
+          products={data.categories[1].products}
+        />
+      </div>
     </div>
   )
 }
