@@ -14,7 +14,7 @@ const getSearchProducts = async (
       where: {
         title: {
           search: text,
-        },
+        }
       },
     })
 

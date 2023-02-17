@@ -2,7 +2,7 @@
 
 import ShopHeader from '@/components/ShopHeader';
 import { useEffect, useState } from 'react';
-import ProductsGrid from '../../../components/ProductsGrid'
+import ProductsGrid from '@/components/ProductsGrid'
 
 export default function SingleCategory({params}) {
 
@@ -20,8 +20,6 @@ export default function SingleCategory({params}) {
 
   if (isLoading) return <h1>Loading</h1>
   if (data == null) return <h1>No data</h1>
-
-  console.log(data)
 
   return (
     <div className="flex flex-col items-center max-w-[1200px] mx-auto px-5 h-full mb-10">
