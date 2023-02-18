@@ -3,7 +3,7 @@ import PreviewBox from "./PreviewBox"
 export default function Products({products}) {
 
   return (
-    <div className="flex flex flex-wrap">
+    <div className="flex flex-wrap max-w-[1200px] mx-auto">
       {products.map((product, index) => {
         return (
           <div key={index}>

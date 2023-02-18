@@ -3,7 +3,7 @@ import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs"
 
 export default function Footer() {
   return (
-    <div className="absolute bottom-[-10rem] w-full bg-black">
+    <div className="w-full bg-black">
       <div className="flex flex-wrap justify-center text-white text-sm px-10 md:px-[5rem] pb-6 gap-4 max-w-[1200px] mx-auto">
         <div className="flex-1 text-3xl min-w-[13rem] py-4">
           <h1>FakeSurf</h1>

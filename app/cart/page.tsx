@@ -28,7 +28,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="px-2 w-screen max-w-[1200px] mx-auto">
+    <div className="px-5 w-screen max-w-[1200px] mx-auto">
       <ShopHeader title={`YOUR CART (${cart.length})`} />
 
       {cart.length === 0 ? (
@@ -107,7 +107,7 @@ export default function Cart() {
             </div>
             <button 
               type="button" 
-              className="bg-slate-800 text-white px-8 py-3 hover:bg-slate-900 self-end mt-2"
+              className="bg-slate-800 text-white px-8 py-3 hover:bg-black self-end mt-2 rounded-sm"
             >
               CHECK OUT
             </button>

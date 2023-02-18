@@ -23,9 +23,9 @@ export default function Navbar() {
   }
 
   return (
-    <div className="border-b-2 fixed top-0 w-screen bg-white">
+    <div className="border-b-[1px] sticky z-10 top-0 w-screen bg-white">
       <div className="flex flex-row py-8 max-w-[1200px] mx-auto">
-        <div className="px-5 text-6xl font-bold">
+        <div className="pr-5 text-6xl font-bold">
           <Link href="/">
             FakeSurf
           </Link>
@@ -33,7 +33,7 @@ export default function Navbar() {
 
         <form className="border-slate-200 border-2 flex flex-row flex-1 items-center px-3 gap-1 mx-4">
           <button type="button" onClick={() => router.push(`/search/${search}`)}>
-            <BiSearch />
+            <BiSearch size={20} />
           </button>
 
           <input 

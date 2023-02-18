@@ -24,17 +24,19 @@ export default function Shop() {
   if (data == null) return <h1>No data</h1>
 
   return (
-    <div className="flex flex-col items-center max-w-6xl mx-auto px-5 h-full">
+    <div className="flex flex-col items-center h-full w-full">
       <ShopHeader title={`SHOP`} />
 
-      <div className="w-full flex flex-row my-4 gap-6">
-        <CategoriesBox 
-          categories={data.categories}
-        />
+      <div className="w-full h-full bg-slate-50">
+        <div className="max-w-[1200px] mx-auto py-10 flex flex-row gap-6">
+          <CategoriesBox 
+            categories={data.categories}
+          />
 
-        <ProductsGrid 
-          products={data.categories[1].products}
-        />
+          <ProductsGrid 
+            products={data.categories[0].products}
+          />
+        </div>
       </div>
     </div>
   )

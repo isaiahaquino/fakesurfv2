@@ -4,10 +4,8 @@ import bg from "../public/home.jpg"
 
 export default function Home() {
   return (
-    <main className="">
-      <div className="h-full">
-        <Image className="object-cover" src={bg} alt="Background" />
-      </div>
-    </main>
+    <div className="h-full">
+      <Image className="object-cover" src={bg} alt="Background" />
+    </div>
   )
 }

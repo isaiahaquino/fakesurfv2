@@ -8,7 +8,6 @@ const getSearchProducts = async (
 ) => {
   try {
     const text = req.query.text as string
-    console.log(text)
 
     const searchData = await prisma.product.findMany({
       where: {
