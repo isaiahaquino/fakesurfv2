@@ -9,6 +9,9 @@ const getCategories = async (
 ) => {
     try {
         const categories = await prisma.category.findMany({
+            where: {
+                special: false,
+            },
             select: {
                 id: true,
                 name: true,
@@ -22,6 +25,7 @@ const getCategories = async (
                         description: true,
                         image: true,
                         price: true,
+                        id: true,
                     },
                 },
             },

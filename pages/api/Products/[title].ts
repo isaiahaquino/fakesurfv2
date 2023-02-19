@@ -19,6 +19,7 @@ const getSingleProduct = async (
                 price: true,
                 quantity: true,
                 image: true,
+                id: true,
             },
         });
         if (!product) {

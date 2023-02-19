@@ -41,11 +41,11 @@ export default function Cart() {
                 <th scope="col" className="px-6 py-4 text-left">Item</th>
                 <th scope="col" className="px-6 py-4">Price</th>
                 <th scope="col" className="px-6 py-4">Quantity</th>
-                <th scope="col" className="px-6 py-4">Total</th>
+                <th scope="col" className="px-6 py-4 text-right">Total</th>
               </tr>
             </thead>
-            {cart.map((item, index) => (
-              <tbody>
+            <tbody>
+              {cart.map((item, index) => (
                 <tr key={index} className="border-b">
                   <td scope="row" className="flex flex-row items-center gap-4 py-4">
                     <Image src='https://placeimg.com/480/480/tech' height='75' width='50' alt=""></Image>
@@ -72,7 +72,7 @@ export default function Cart() {
                     </div>
                   </td>
                   <td>
-                    <div className="flex flex-row items-center justify-center gap-4">
+                    <div className="flex flex-row items-center justify-end gap-4">
                       <p>$ {item.price * item.quantity}</p>
                       <button 
                         type="button" 
@@ -84,8 +84,8 @@ export default function Cart() {
                     </div>
                   </td>
                 </tr>
-              </tbody>
-            ))}
+              ))}
+            </tbody>
           </table>
 
           <div className="flex flex-col max-w-md w-full self-end mt-4">

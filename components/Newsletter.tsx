@@ -10,7 +10,7 @@ export default function Newsletter() {
           <input 
             type='text' 
             placeholder='Enter your email address'
-            className='w-full'
+            className='w-full focus:outline-0'
           ></input>
         </div>
         <button 

@@ -8,10 +8,16 @@ import ShopHeader from "@/components/ShopHeader";
 export default function Shop() {
 
   const [data, setData] = useState(null)
+  const [feature, setFeature] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     setIsLoading(true)
+    fetch('/api/categories/clealw4p40000u2b3z785phfl')
+      .then((res) => res.json())
+      .then((data) => {
+        setFeature(data)
+      })
     fetch('/api/categories')
       .then((res) => res.json())
       .then((data) => {
@@ -21,8 +27,8 @@ export default function Shop() {
   }, [])
 
   if (isLoading) return <h1>Loading</h1>
-  if (data == null) return <h1>No data</h1>
-
+  if (feature == null) return <h1>No data</h1>
+  
   return (
     <div className="flex flex-col items-center h-full w-full">
       <ShopHeader title={`SHOP`} />
@@ -34,7 +40,7 @@ export default function Shop() {
           />
 
           <ProductsGrid 
-            products={data.categories[0].products}
+            products={feature?.category.products}
           />
         </div>
       </div>

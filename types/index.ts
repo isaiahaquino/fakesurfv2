@@ -2,6 +2,7 @@ export type TApiAllCategoriesResp = {
   categories: {
       id: string;
       name: string;
+      special: boolean;
       products: {
           title: string;
           description: string;
