@@ -1,7 +1,7 @@
 export default function QuickView({id, handleQuick}) {
   return (
-    <div>
-
+    <div className="fixed m-auto">
+      {id}
     </div>
   )
 }

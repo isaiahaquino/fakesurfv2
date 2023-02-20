@@ -36,7 +36,7 @@ const getCategories = async (
         return res.status(200).json({ categories });
     } catch (error) {
         return res.status(500).json({
-            message: "Something went wrong!! Please try again after sometime",
+            message: {error},
         });
     }
 };
