@@ -33,8 +33,7 @@ export default function Shop() {
 
   if (isLoading) return <h1>Loading</h1>
   if (feature == null) return <h1>No data</h1>
-
-  console.log(data)
+  if (data == null) return <h1>no data</h1>
 
   return (
     <div className="flex flex-col items-center h-full w-full">
