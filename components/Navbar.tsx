@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { BiSearch, BiCartAlt } from "react-icons/bi"
+import { BiSearch, BiCartAlt, BiMenu, BiX, BiChevronsRight } from "react-icons/bi"
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -24,14 +24,14 @@ export default function Navbar() {
 
   return (
     <div className="border-b-[1px] sticky z-10 top-0 w-screen bg-white">
-      <div className="flex flex-row py-8 max-w-[1200px] mx-auto">
-        <div className="pr-5 text-6xl font-bold">
+      <div className="flex flex-row py-4 sm:py-8 max-w-[1200px] mx-auto justify-between">
+        <div className="px-4  text-3xl sm:text-6xl font-bold">
           <Link href="/">
             FakeSurf
           </Link>
         </div>
 
-        <form className="border-slate-200 border-2 flex flex-row flex-1 items-center px-3 gap-1 mx-4">
+        <form className="border-slate-200 border-2 flex flex-row flex-1 items-center px-3 gap-1 mx-4 hidden md:flex">
           <button type="button" onClick={() => router.push(`/search/${search}`)}>
             <BiSearch size={20} />
           </button>
@@ -46,8 +46,8 @@ export default function Navbar() {
           ></input>
         </form>
         
-        <div className="flex align-middle">
-          <ul className="flex flex-row divide-slate-200 divide-x-2 items-center">
+        <div className="flex flex-row">
+          <ul className="flex-row items-center hidden sm:flex">
             <li className="px-4 py-1">
               <Link href="/about">
                 About
@@ -58,13 +58,35 @@ export default function Navbar() {
                 Shop
               </Link>
             </li>
-            <li className="px-4 py-1">
-              <Link href="/cart" className="flex flex-row items-center">
-                <BiCartAlt  size={18} /> ({cart.length})
-              </Link>
-            </li>
           </ul> 
+          <Link href="/cart" className="flex flex-row items-center px-3 py-1">
+                <BiCartAlt  size={25} />
+                <p className="hidden sm:block">({cart.length})</p>
+          </Link>
+          <button
+            className="px-3 sm:hidden"
+          ><BiMenu size={25} /></button>
         </div>
+      </div>
+
+      <div>
+        <ul className="flex flex-col fixed bg-white w-[20rem] right-0 top-0 text-xl">
+          <li className="w-full self-center flex justify-end">
+            <button type="button" className="p-4">
+              <BiX size={35} />
+            </button>
+          </li>
+          <li className="w-full py-4">
+            <Link href="/about" className="pl-10 pr-4 py-4 flex justify-between">
+              About <BiChevronsRight size={30}/>
+            </Link>
+          </li>
+          <li className="w-full py-4">
+            <Link href="/shop" className="pl-10 pr-4 py-4 flex justify-between">
+              Shop <BiChevronsRight size={30}/>
+            </Link>
+          </li>
+        </ul> 
       </div>
     </div>
 
