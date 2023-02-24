@@ -1,7 +1,7 @@
 import { BiX, BiChevronsRight } from "react-icons/bi"
 import Link from "next/link"
 
-export default function MobileNav (props) {
+export default function MobileNav (props:any) {
   return (
     <div>
       <ul className="flex flex-col fixed bg-white w-[20rem] right-0 top-0 text-xl">

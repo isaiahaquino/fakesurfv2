@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TMultipleProducts } from "@/types";
+
+const initialState:TMultipleProducts = []
 
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: [],
+  initialState,
   reducers: {
     addToCart: (state, action) => {
       const itemExists = state.find((item) => {
@@ -16,10 +19,11 @@ const cartSlice = createSlice({
     },
     incrementQuantity: (state, action) => {
       const item = state.find((item) => item.id === action.payload.id)
-      item.quantity++
+      if (item) item.quantity++
     },
     decrementQuantity: (state, action) => {
       const item = state.find((item) => item.id === action.payload.id)
+      if (!item) return
       if (item.quantity === 1) {
         const index = state.findIndex((item) => item.id === action.payload.id)
         state.splice(index, 1)

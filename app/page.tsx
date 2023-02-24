@@ -5,10 +5,11 @@ import Link from "next/link"
 import bg from "../public/home.jpg"
 import ProductsGrid from "@/components/ProductsGrid"
 import { useState, useEffect } from "react"
+import { TApiSingleCategoryWithProductResp } from "@/types"
 
 export default function Home() {
 
-  const [feature, setFeature] = useState(null)
+  const [feature, setFeature] = useState<TApiSingleCategoryWithProductResp | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {

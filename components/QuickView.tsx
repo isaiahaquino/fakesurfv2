@@ -8,12 +8,11 @@ import { addToCart } from "@/redux/cartSlice"
 
 export default function QuickView() {
 
-  const quick = useSelector((state) => state.quick)
+  const quick = useSelector((state:any) => state.quick)
   const dispatch = useDispatch()
   const item = quick[0]
 
-  if (quick.length === 0) return 
-  console.log(item)
+  if (quick.length === 0) return <></>
 
   return (
     <div className="fixed top-0 right-0 bottom-0 left-0 bg-black h-screen w-screen z-[100]">

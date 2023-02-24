@@ -42,3 +42,46 @@ export type TApiErrorResp = {
   message: string;
 };
 
+export type TSingleProduct = {
+  title: string;
+  description: string;
+  price: string;
+  quantity: number;
+  image: string;
+  id: string;
+}
+
+export type TMultipleProducts = {
+  title: string;
+  description: string;
+  price: string;
+  quantity: number;
+  image: string;
+  id: string;
+}[];
+
+export type TCategoriesWithProduct = {
+  id: string;
+  name: string;
+  products: {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    price: string;
+    quantity: number;
+  }[];
+}[];
+
+export type TSearchedProducts = {
+  searchData: {
+    title: string;
+    description: string;
+    price: string;
+    quantity: number;
+    image: string;
+    id: string;
+  }[];
+}
+
+

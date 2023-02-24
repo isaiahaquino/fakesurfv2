@@ -1,8 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { TMultipleProducts } from "@/types"
+
+const initialState:TMultipleProducts = [{
+  title: '',
+  description: '',
+  price: '',
+  quantity: 0,
+  image: '',
+  id: '',
+}]
 
 const quickSlice = createSlice({
   name: 'quick',
-  initialState: [],
+  initialState,
   reducers: {
     openQuick: (state, action) => {
       state.push({...action.payload})

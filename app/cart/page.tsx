@@ -6,14 +6,15 @@ import { decrementQuantity, incrementQuantity, removeFromCart } from "@/redux/ca
 import { IoCloseSharp, IoArrowDownSharp, IoArrowUpSharp } from "react-icons/io5"
 import ShopHeader from "@/components/ShopHeader"
 import currency from "currency.js"
+import { TSingleProduct } from "@/types"
 
 export default function Cart() {
 
-  const cart = useSelector((state) => state.cart)
+  const cart = useSelector((state:any) => state.cart)
   const dispatch = useDispatch()
 
   const getTotalPrice = () => {
-    const total = cart.reduce((accumulator, item) => accumulator + item.quantity * item.price, 0)
+    const total = cart.reduce((accumulator: number, item:TSingleProduct) => accumulator + item.quantity * parseInt(item.price), 0)
     return currency(total, { precision: 2 })
   }
 
@@ -45,7 +46,7 @@ export default function Cart() {
               </tr>
             </thead>
             <tbody>
-              {cart.map((item, index) => (
+              {cart.map((item:TSingleProduct, index:number) => (
                 <tr key={index} className="border-b">
                   <td scope="row" className="flex flex-row items-center gap-4 py-4">
                     <Image className="hidden sm:block" src='https://placeimg.com/480/480/tech' height='75' width='50' alt=""></Image>
@@ -73,7 +74,7 @@ export default function Cart() {
                   </td>
                   <td>
                     <div className="flex flex-row items-center justify-end gap-2 sm:ap-4">
-                      <p>${item.price * item.quantity}</p>
+                      <p>${parseInt(item.price) * item.quantity}</p>
                       <button 
                         type="button" 
                         onClick={() => dispatch(removeFromCart(item))}

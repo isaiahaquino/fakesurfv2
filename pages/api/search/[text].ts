@@ -15,6 +15,14 @@ const getSearchProducts = async (
           search: text,
         }
       },
+      select: {
+        title: true,
+        description: true,
+        price: true,
+        quantity: true,
+        image: true,
+        id: true,
+      },
     })
 
     return res.status(200).json({ searchData })

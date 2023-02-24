@@ -10,14 +10,14 @@ import MobileNav from "./MobileNav";
 export default function Navbar() {
 
   const router = useRouter()
-  const cart = useSelector((state) => state.cart)
+  const cart = useSelector((state:any) => state.cart)
   const [search, setSearch] = useState('')
   const [mobileNav, setMobileNav] = useState(false)
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event:KeyboardEvent) => {
     if (event.key === 'Enter') {
       event.preventDefault()
-      console.log(search)
+      console.log(`Searching for: "${search}"`)
       if (search != '') {
         router.push(`/search/${search}`)
       }
@@ -48,7 +48,7 @@ export default function Navbar() {
             placeholder="What are you looking for?"
             onChange={(e) => {setSearch(e.target.value)}}
             value={search}
-            onKeyDown={handleKeyDown}
+            onKeyDown={() => handleKeyDown}
           ></input>
         </form>
         

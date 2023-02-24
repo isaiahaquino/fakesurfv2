@@ -2,9 +2,11 @@ import Image from "next/image"
 import { useDispatch } from "react-redux"
 import { addToCart } from "@/redux/cartSlice"
 import { openQuick } from "@/redux/quickSlice";
+import { TSingleProduct } from "@/types";
 
-export default function PreviewBox({product}) {
-  
+export default function PreviewBox(props:any) {
+
+  const product:TSingleProduct = props.product
   const dispatch = useDispatch();
 
   return (

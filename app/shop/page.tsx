@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import ProductsGrid from "@/components/ProductsGrid"
 import CategoriesBox from "@/components/CategoriesBox";
 import ShopHeader from "@/components/ShopHeader";
+import { TApiAllCategoriesResp, TApiSingleCategoryWithProductResp } from "@/types";
 
 export default function Shop() {
 
-  const [data, setData] = useState(null)
-  const [feature, setFeature] = useState(null)
+  const [data, setData] = useState<TApiAllCategoriesResp | null>(null)
+  const [feature, setFeature] = useState<TApiSingleCategoryWithProductResp | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {

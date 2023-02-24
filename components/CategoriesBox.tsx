@@ -1,6 +1,9 @@
 import Link from "next/link"
+import { TCategoriesWithProduct } from "@/types"
 
-export default function CategoriesBox({categories}) {
+export default function CategoriesBox(props:any) {
+
+  const categories: TCategoriesWithProduct = props.categories
 
   if (categories == null) return <div></div>
 
