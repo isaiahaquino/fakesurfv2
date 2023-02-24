@@ -1,24 +1,14 @@
 import Image from "next/image"
 import { useDispatch } from "react-redux"
 import { addToCart } from "@/redux/cartSlice"
-import { useState } from "react";
-import QuickView from "./QuickView";
+import { openQuick } from "@/redux/quickSlice";
 
 export default function PreviewBox({product}) {
   
-  const [quick, setQuick] = useState(null);
   const dispatch = useDispatch();
-
-  const handleQuick = (open, id) => {
-    if (open) {
-      setQuick(id)
-    } else { setQuick(null) }
-  }
 
   return (
     <div className="mx-2 mb-1 bg-white group">
-      {quick === null ? <></> : <QuickView id={quick} handleQuick={handleQuick} />}
-
       <div className="border-[1px]">
         <Image 
           src='https://placeimg.com/480/480/tech' 
@@ -32,7 +22,7 @@ export default function PreviewBox({product}) {
           <button 
             className="bg-white border-[1px] border-black text-black rounded-sm text-sm px-[14px] py-[4px]"
             type='button'
-            onClick={() => handleQuick(true, product.id)}
+            onClick={() => dispatch(openQuick(product))}
           >
             QUICK VIEW
           </button>

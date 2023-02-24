@@ -3,6 +3,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Providers from '@/components/Providers'
 import Newsletter from '@/components/Newsletter'
+import { useSelector } from 'react-redux'
+import QuickView from '@/components/QuickView'
 
 export default function RootLayout({
   children,
@@ -20,6 +22,8 @@ export default function RootLayout({
         <Providers>
           <div className='relative min-h-screen'>
             <Navbar />
+
+            <QuickView />
 
             <main className='h-full'>
               {children}

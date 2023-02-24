@@ -25,7 +25,7 @@ export default function Home() {
   if (feature == null) return <h1>No data</h1>
 
   return (
-    <div className="h-full">
+    <div className="h-full">      
       <Image className="object-cover" src={bg} alt="Background" />
 
       <div className="w-full flex flex-col items-center justify-center gap-8 bg-slate-50 py-20">

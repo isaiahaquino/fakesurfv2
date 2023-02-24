@@ -5,12 +5,14 @@ import { BiSearch, BiCartAlt, BiMenu, BiX, BiChevronsRight } from "react-icons/b
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import MobileNav from "./MobileNav";
 
 export default function Navbar() {
 
   const router = useRouter()
   const cart = useSelector((state) => state.cart)
   const [search, setSearch] = useState('')
+  const [mobileNav, setMobileNav] = useState(false)
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
@@ -20,6 +22,10 @@ export default function Navbar() {
         router.push(`/search/${search}`)
       }
     }
+  }
+
+  const handleMobileNav = (input: boolean) => {
+    setMobileNav(input)
   }
 
   return (
@@ -65,29 +71,13 @@ export default function Navbar() {
           </Link>
           <button
             className="px-3 sm:hidden"
+            onClick={() => {setMobileNav(true)}}
           ><BiMenu size={25} /></button>
         </div>
       </div>
 
-      <div>
-        <ul className="flex flex-col fixed bg-white w-[20rem] right-0 top-0 text-xl">
-          <li className="w-full self-center flex justify-end">
-            <button type="button" className="p-4">
-              <BiX size={35} />
-            </button>
-          </li>
-          <li className="w-full py-4">
-            <Link href="/about" className="pl-10 pr-4 py-4 flex justify-between">
-              About <BiChevronsRight size={30}/>
-            </Link>
-          </li>
-          <li className="w-full py-4">
-            <Link href="/shop" className="pl-10 pr-4 py-4 flex justify-between">
-              Shop <BiChevronsRight size={30}/>
-            </Link>
-          </li>
-        </ul> 
-      </div>
+      {mobileNav ? <MobileNav closeMobile={() => {setMobileNav(false)}}/> : <></>}
+      
     </div>
 
   )
