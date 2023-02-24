@@ -48,12 +48,12 @@ export default function Cart() {
               {cart.map((item, index) => (
                 <tr key={index} className="border-b">
                   <td scope="row" className="flex flex-row items-center gap-4 py-4">
-                    <Image src='https://placeimg.com/480/480/tech' height='75' width='50' alt=""></Image>
-                    <h1>{item.title}</h1>
+                    <Image className="hidden sm:block" src='https://placeimg.com/480/480/tech' height='75' width='50' alt=""></Image>
+                    <h1 className="font-bold">{item.title}</h1>
                   </td>
-                  <td>$ {item.price}</td>
+                  <td>${item.price}</td>
                   <td>
-                    <div className="flex flex-row items-center justify-center gap-2">
+                    <div className="flex flex-row items-center justify-center gap-1 sm:gap-2">
                       <button 
                         type="button" 
                         onClick={() => dispatch(decrementQuantity(item))}
@@ -61,7 +61,7 @@ export default function Cart() {
                       >
                         <IoArrowDownSharp />
                       </button>
-                      <p className="px-5 py-3 border-2 border-black">{item.quantity}</p>
+                      <p className=" px-3 sm:px-5 py-3 border-2 border-black">{item.quantity}</p>
                       <button 
                         type="button" 
                         onClick={() => dispatch(incrementQuantity(item))}
@@ -72,8 +72,8 @@ export default function Cart() {
                     </div>
                   </td>
                   <td>
-                    <div className="flex flex-row items-center justify-end gap-4">
-                      <p>$ {item.price * item.quantity}</p>
+                    <div className="flex flex-row items-center justify-end gap-2 sm:ap-4">
+                      <p>${item.price * item.quantity}</p>
                       <button 
                         type="button" 
                         onClick={() => dispatch(removeFromCart(item))}
@@ -91,7 +91,7 @@ export default function Cart() {
           <div className="flex flex-col max-w-md w-full self-end mt-4">
             <div className="py-3 border-b flex flex-row justify-between align-middle">
               <h1>Subtotal:</h1>
-              <p>$ {`${getTotalPrice()}`}</p>
+              <p>${`${getTotalPrice()}`}</p>
             </div>
             <div className="py-3 border-b flex flex-row justify-between align-middle">
               <h1>Shipping:</h1>
@@ -99,11 +99,11 @@ export default function Cart() {
             </div>
             <div className="py-3 border-b flex flex-row justify-between align-middle">
               <h1>Tax:</h1>
-              <p>$ {`${getTax()}`}</p>
+              <p>${`${getTax()}`}</p>
             </div>
             <div className="py-3 flex flex-row justify-between align-middle">
               <h1>Grand total:</h1>
-              <p>$ {`${getGrandPrice()}`}</p>
+              <p>${`${getGrandPrice()}`}</p>
             </div>
             <button 
               type="button" 

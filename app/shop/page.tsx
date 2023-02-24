@@ -40,7 +40,7 @@ export default function Shop() {
       <ShopHeader title={`SHOP`} />
 
       <div className="w-full h-full bg-slate-50">
-        <div className="max-w-[1200px] mx-auto py-10 flex flex-row gap-6">
+        <div className="max-w-[1200px] mx-auto py-10 flex flex-col sm:flex-row gap-6">
           <CategoriesBox 
             categories={data.categories}
           />

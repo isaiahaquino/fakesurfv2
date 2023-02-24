@@ -29,7 +29,7 @@ export default function RootLayout({
               {children}
             </main>
 
-            <footer className='absolute bottom-[-26.5rem] w-full'>
+            <footer className='absolute bottom-[-50rem] sm:bottom-[-26.5rem] w-full'>
               <Newsletter />
 
               <Footer />
