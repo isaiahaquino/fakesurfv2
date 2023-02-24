@@ -12,6 +12,8 @@ export default function QuickView() {
   const dispatch = useDispatch()
   const item = quick[0]
 
+  console.log(item)
+
   if (quick.length === 0) return <></>
 
   return (

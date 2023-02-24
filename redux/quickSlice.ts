@@ -1,14 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { TMultipleProducts } from "@/types"
 
-const initialState:TMultipleProducts = [{
-  title: '',
-  description: '',
-  price: '',
-  quantity: 0,
-  image: '',
-  id: '',
-}]
+const initialState:TMultipleProducts = []
 
 const quickSlice = createSlice({
   name: 'quick',
