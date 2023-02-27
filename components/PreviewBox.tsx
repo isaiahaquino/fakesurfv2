@@ -12,14 +12,16 @@ export default function PreviewBox(props:any) {
   return (
     <div className="mx-2 mb-1 bg-white group">
       <div className="border-[1px]">
-        <Image 
-          src='https://placeimg.com/480/480/tech' 
-          alt="" 
-          width={250} 
-          height={300} 
-          priority={true}
-          className="m-3"
-        ></Image>
+        <div className="m-3 h-[300px] w-[250px] relative"> 
+          <Image 
+            src={`${product.image}`}
+            alt="" 
+            fill
+            className="object-contain"
+            sizes="33vw"
+          ></Image>
+        </div>
+        
         <div className="flex-row justify-center items-center h-[5rem] gap-2 hidden group-hover:flex">
           <button 
             className="bg-white border-[1px] border-black text-black rounded-sm text-sm px-[14px] py-[4px]"

@@ -49,7 +49,9 @@ export default function Cart() {
               {cart.map((item:TSingleProduct, index:number) => (
                 <tr key={index} className="border-b">
                   <td scope="row" className="flex flex-row items-center gap-4 py-4">
-                    <Image className="hidden sm:block" src='https://placeimg.com/480/480/tech' height='75' width='50' alt=""></Image>
+                    <div className="h-[75px] w-[50px] relative">
+                      <Image className="hidden sm:block object-contain" src={`${item.image}`} fill alt=""></Image>
+                    </div>
                     <h1 className="font-bold">{item.title}</h1>
                   </td>
                   <td>${item.price}</td>

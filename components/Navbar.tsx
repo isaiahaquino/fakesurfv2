@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import MobileNav from "./MobileNav";
+import { TSingleProduct } from "@/types";
 
 export default function Navbar() {
 
@@ -63,7 +64,7 @@ export default function Navbar() {
           </ul> 
           <Link href="/cart" className="flex flex-row items-center px-3 py-1">
                 <BiCartAlt  size={25} />
-                <p className="hidden sm:block">({cart.length})</p>
+                <p className="hidden sm:block">({cart.reduce((accum:number, item: TSingleProduct) => accum + item.quantity, 0)})</p>
           </Link>
           <button
             className="px-3 sm:hidden"

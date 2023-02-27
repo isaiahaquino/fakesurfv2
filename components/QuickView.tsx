@@ -14,13 +14,15 @@ export default function QuickView() {
 
   if (quick.length === 0) return <></>
 
+  console.log(item)
+
   return (
     <div className="fixed top-0 right-0 bottom-0 left-0 bg-black h-screen w-screen z-[100]">
       <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white z-30 
         flex items-start justify-between w-[calc(100vw-1rem)] h-fit md:w-[755px]">
 
         <div className="flex flex-col sm:flex-row mx-auto gap-5 my-5">
-          <Image src='https://placeimg.com/480/480/tech' height='300' width='300' alt=''></Image>
+          <Image src={`${item.image}`} height='300' width='300' alt=''></Image>
           <div className="flex flex-col gap-2">
             <h1 className="text-4xl">{item.title}</h1>
             <p>${item.price}</p>

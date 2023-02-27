@@ -12,10 +12,10 @@ export default function Footer() {
         <div className="flex-2 max-w-[25rem] pr-2 py-4">
           <ul className="flex flex-wrap">
             <li className="w-40 py-1">
-              <Link href=''>Shop</Link>
+              <Link href='/shop'>Shop</Link>
             </li>
             <li className="w-40 py-1">
-              <Link href=''>About</Link>
+              <Link href='/about'>About</Link>
             </li>
             <li className="w-40 py-1">
               <Link href=''>Lookbook</Link>
@@ -54,7 +54,7 @@ export default function Footer() {
       </div>
 
       <div className="flex justify-center text-slate-300 bg-black text-sm py-1">
-        Created by Isaiah Aquino &copy; 2023
+        <p>Created by Isaiah Aquino &copy; 2023 | Design inspired by <Link className="underline" href='https://clairemontsurf.com/'>Clairmont Surf</Link></p>
       </div>
     </div>
   )
