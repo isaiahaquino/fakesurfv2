@@ -21,7 +21,6 @@ export default function SingleCategory(props:any) {
 
   if (isLoading) return <h1>Loading</h1>
   if (data == null) return <h1>No data</h1>
-  console.log(data)
 
   return (
     <div className="flex flex-col items-center w-full mx-auto h-full">

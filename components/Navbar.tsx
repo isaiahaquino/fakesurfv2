@@ -14,7 +14,7 @@ export default function Navbar() {
   const [search, setSearch] = useState('')
   const [mobileNav, setMobileNav] = useState(false)
 
-  const handleKeyDown = (event:KeyboardEvent) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault()
       console.log(`Searching for: "${search}"`)
@@ -22,10 +22,6 @@ export default function Navbar() {
         router.push(`/search/${search}`)
       }
     }
-  }
-
-  const handleMobileNav = (input: boolean) => {
-    setMobileNav(input)
   }
 
   return (
@@ -48,7 +44,7 @@ export default function Navbar() {
             placeholder="What are you looking for?"
             onChange={(e) => {setSearch(e.target.value)}}
             value={search}
-            onKeyDown={() => handleKeyDown}
+            onKeyDown={handleKeyDown}
           ></input>
         </form>
         
