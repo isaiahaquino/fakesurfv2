@@ -47,7 +47,7 @@ export default function Shop() {
           />
 
           <ProductsGrid 
-            products={feature.category.products}
+            products={data.categories[0].products}
           />
         </div>
       </div>
