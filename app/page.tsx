@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import bg from "../public/home.jpg"
 import ProductsGrid from "@/components/ProductsGrid"
 import { useState, useEffect } from "react"
