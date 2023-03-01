@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch('/api/categories/clealw4p40000u2b3z785phfl')
+    fetch('/api/categories/featured')
       .then((res) => res.json())
       .then((data) => {
         setFeature(data)
@@ -30,7 +30,7 @@ export default function Home() {
       <Image className="object-cover" src={bg} alt="Background" priority={true} />
 
       <div className="w-full flex flex-col items-center justify-center gap-8 bg-slate-50 py-20">
-        <h1 className=" text-3xl sm:text-4xl font-bold">FEATURED PRODUCTS</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold">FEATURED PRODUCTS</h1>
         <ProductsGrid
           products={feature.category.products} 
         />

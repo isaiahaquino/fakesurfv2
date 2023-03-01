@@ -14,7 +14,7 @@ export default function Shop() {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch('/api/categories/clealw4p40000u2b3z785phfl')
+    fetch('/api/categories/featured')
       .then((res) => res.json())
       .then((data) => {
         setFeature(data)
@@ -36,6 +36,9 @@ export default function Shop() {
   if (feature == null) return <h1>No data</h1>
   if (data == null) return <h1>no data</h1>
 
+  console.log(data.categories)
+  console.log(feature.category)
+
   return (
     <div className="flex flex-col items-center h-full w-full">
       <ShopHeader title={`SHOP`} />
@@ -47,7 +50,7 @@ export default function Shop() {
           />
 
           <ProductsGrid 
-            products={feature?.category?.products}
+            products={feature.category.products}
           />
         </div>
       </div>
